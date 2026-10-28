@@ -1,0 +1,21 @@
+{
+  "name": "Nayra Elhara",
+  "short_name": "Nayra",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1e0032",
+  "theme_color": "#8149a4",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "nayra.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "nayra.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

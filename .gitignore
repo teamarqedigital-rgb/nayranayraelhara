@@ -1,0 +1,25 @@
+# Environment credentials and local configuration
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+
+# Installed dependencies and generated output
+node_modules/
+**/node_modules/
+dist/
+coverage/
+
+# Backend and local archives not part of the static website
+/backend/
+/backend.rar
+/particles.js-master/
+/particles.js-master.zip
+
+# Private or unverified materials
+*.pdf
+*.mp3
+/nequi.png
+*.txt
+/Nueva carpeta/

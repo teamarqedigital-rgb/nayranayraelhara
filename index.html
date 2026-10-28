@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181622">
+  <meta name="description" content="Un espacio para volver a tu centro. Explora el oráculo, las sesiones y los recursos de Nayra Elhara.">
+  <title>Nayra Elhara — Un espacio para volver a tu centro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Nayra Elhara, inicio">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>Nayra Elhara</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="#guia">Tu momento</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="tienda.html#ebook">El ebook</a>
+      <a href="#sobre-nayra">Sobre Nayra</a>
+      <a class="nav-cta" href="Servicios.html">Encontrar mi camino <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-line"></span> UN ESPACIO PARA VOLVER A TU CENTRO</p>
+        <h1>Haz espacio para<br><em>escucharte.</em></h1>
+        <p class="hero-intro">Un refugio para la introspección, la espiritualidad y el autoconocimiento. Sin prisa, a tu manera.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#carta-del-dia" data-reveal-daily-card>Conoce aquí tu carta de hoy <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="Servicios.html">Conocer las sesiones <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero-note"><span aria-hidden="true">✧</span> Un primer paso pequeño también cuenta.</p>
+      </div>
+      <div class="hero-art" data-reveal>
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-glow"></div>
+        <img src="nayra.png" alt="Ilustración de Nayra bajo la luna" width="1024" height="1536">
+        <div class="art-caption"><span>INTUICIÓN · CALMA · PRESENCIA</span><span>✦</span></div>
+      </div>
+      <a class="scroll-cue" href="#guia"><span></span> DESLIZA PARA EXPLORAR</a>
+    </section>
+
+    <section class="section guide-section" id="guia">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO, TU RITMO</p>
+        <h2>¿Qué te gustaría <em>explorar hoy?</em></h2>
+        <p>No tienes que tenerlo todo claro. Elige lo que más se acerca a tu momento y recibe una reflexión con una práctica sencilla para ti.</p>
+      </div>
+      <div class="intention-grid" data-reveal role="group" aria-label="Elige una intención">
+        <button class="intention-card" type="button" data-intention="amor">
+          <span class="intention-card-top"><span class="intention-symbol" aria-hidden="true">♡</span><span class="intention-index">01</span></span>
+          <span class="intention-title">Quiero volver a mí</span>
+          <span class="intention-description">Amor propio · Reconectar con lo que necesitas.</span>
+          <span class="intention-arrow" aria-hidden="true">Explorar <span>↗</span></span>
+        </button>
+        <button class="intention-card" type="button" data-intention="claridad">
+          <span class="intention-card-top"><span class="intention-symbol" aria-hidden="true">◌</span><span class="intention-index">02</span></span>
+          <span class="intention-title">Necesito claridad</span>
+          <span class="intention-description">Mirar una decisión sin exigirme resolverlo todo hoy.</span>
+          <span class="intention-arrow" aria-hidden="true">Explorar <span>↗</span></span>
+        </button>
+        <button class="intention-card" type="button" data-intention="proposito">
+          <span class="intention-card-top"><span class="intention-symbol" aria-hidden="true">✧</span><span class="intention-index">03</span></span>
+          <span class="intention-title">Busco mi siguiente paso</span>
+          <span class="intention-description">Propósito · Escuchar qué tiene sentido para mí.</span>
+          <span class="intention-arrow" aria-hidden="true">Explorar <span>↗</span></span>
+        </button>
+        <button class="intention-card" type="button" data-intention="calma">
+          <span class="intention-card-top"><span class="intention-symbol" aria-hidden="true">☾</span><span class="intention-index">04</span></span>
+          <span class="intention-title">Necesito una pausa</span>
+          <span class="intention-description">Calma interior · Volver, poco a poco, al presente.</span>
+          <span class="intention-arrow" aria-hidden="true">Explorar <span>↗</span></span>
+        </button>
+      </div>
+      <article class="reflection" id="reflection" aria-live="polite" aria-atomic="true" hidden>
+        <div class="reflection-mark" aria-hidden="true">✧</div>
+        <div class="reflection-copy">
+          <p class="eyebrow" id="reflection-label">UNA REFLEXIÓN PARA TI</p>
+          <h3 id="reflection-title"></h3>
+          <p id="reflection-message"></p>
+          <p class="practice"><strong>Un pequeño paso para ti:</strong> <span id="reflection-practice"></span></p>
+          <a class="text-link" href="Servicios.html">Explorar una sesión personal <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <p class="guide-disclaimer">Este oráculo ofrece reflexiones para el autoconocimiento; no predice el futuro ni sustituye atención psicológica, médica o profesional.</p>
+    </section>
+
+    <section class="daily-card-section" id="carta-del-dia">
+      <div class="daily-card-inner">
+        <div class="daily-card-intro" data-reveal>
+          <p class="eyebrow">TAROT DE EVOLUCIÓN Y SANACIÓN</p>
+          <h2>Conoce tu<br><em>carta de hoy.</em></h2>
+          <p>Una carta simbólica del tarot, con una reflexión para que explores lo que resuena contigo hoy. La misma carta te acompañará durante el día.</p>
+          <button class="button button-primary" id="reveal-daily-card" type="button">Conocer mi carta de hoy <span aria-hidden="true">✧</span></button>
+          <p class="daily-card-note">Una herramienta de introspección, no una predicción ni una certeza sobre el futuro.</p>
+        </div>
+        <article class="daily-reading" id="daily-reading" aria-live="polite" aria-atomic="true" hidden>
+          <div class="tarot-card" aria-hidden="true">
+            <span class="tarot-card-number" id="daily-card-number"></span>
+            <span class="tarot-card-symbol" id="daily-card-symbol"></span>
+            <span class="tarot-card-name" id="daily-card-name"></span>
+            <span class="tarot-card-date" id="daily-card-date"></span>
+          </div>
+          <div class="daily-reading-copy">
+            <p class="eyebrow">TU CARTA DE HOY</p>
+            <h3 id="daily-reading-title"></h3>
+            <p id="daily-reading-meaning"></p>
+            <p class="daily-angelic-message"><strong>Frase angelical para hoy</strong><span id="daily-angelic-phrase"></span></p>
+            <p class="daily-affirmation"><strong>Mi afirmación de hoy</strong><span id="daily-affirmation"></span></p>
+            <p class="daily-question"><strong>Para reflexionar:</strong> <span id="daily-reading-prompt"></span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section paths-section" id="servicios">
+      <div class="section-heading section-heading-row" data-reveal>
+        <div>
+          <p class="eyebrow">SIGUE A TU RITMO</p>
+          <h2>Un camino, <em>varias puertas.</em></h2>
+        </div>
+        <p>Explora recursos para acompañarte o conoce las sesiones personalizadas de Nayra.</p>
+      </div>
+      <div class="path-grid" data-reveal>
+        <a class="path-card path-card-session" href="Servicios.html">
+          <span class="path-number">01 / ACOMPAÑAMIENTO</span>
+          <span class="path-icon" aria-hidden="true">✧</span>
+          <h3>Sesiones<br>personalizadas</h3>
+          <p>Un espacio para explorar tus preguntas desde una mirada intuitiva y reflexiva.</p>
+          <span class="path-link">Conocer las sesiones <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="path-card path-card-shop" href="tienda.html">
+          <span class="path-number">02 / TIENDA ESPIRITUAL</span>
+          <span class="path-icon" aria-hidden="true">♡</span>
+          <h3>Cuarzos,<br>amuletos y más</h3>
+          <p>Explora piezas simbólicas y conoce también el ebook de Nayra.</p>
+          <span class="path-link">Visitar la tienda <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="path-card path-card-oracle" href="#guia">
+          <span class="path-number">03 / A TU ALCANCE</span>
+          <span class="path-icon" aria-hidden="true">☾</span>
+          <h3>Una pausa<br>para escucharte</h3>
+          <p>Elige una intención y recibe una reflexión breve, aquí y ahora.</p>
+          <span class="path-link">Volver a la guía <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+      <article class="ebook-promo" data-reveal aria-labelledby="ebook-promo-title">
+        <div class="ebook-cover ebook-promo-cover" role="img" aria-label="Portada ilustrativa del ebook Quédate conmigo">
+          <span class="ebook-cover-brand">NAYRA ELHARA <span aria-hidden="true">✳</span></span>
+          <span class="ebook-cover-moon" aria-hidden="true">☾</span>
+          <span class="ebook-cover-title">Quédate<br><em>conmigo</em></span>
+          <span class="ebook-cover-rule"></span>
+          <span class="ebook-cover-caption">UN ESPACIO PARA VOLVER A TI</span>
+        </div>
+        <div class="ebook-promo-copy">
+          <p class="eyebrow">EL EBOOK DE NAYRA · 54 PÁGINAS</p>
+          <h3 id="ebook-promo-title">Quédate<br><em>conmigo.</em></h3>
+          <p>Un ensayo íntimo y pausas prácticas para no desaparecer cuando amas. Conoce el libro y prueba una experiencia breve inspirada en sus temas.</p>
+          <div class="ebook-promo-actions">
+            <a class="button button-primary" href="tienda.html#ebook">Conocer el ebook <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="tienda.html#pausa-libro">Probar una pausa interactiva <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="about-section" id="sobre-nayra">
+      <div class="about-image" data-reveal>
+        <img src="nayra.png" alt="" loading="lazy" width="1024" height="1536">
+        <span class="image-stamp" aria-hidden="true">N<br>E</span>
+      </div>
+      <div class="about-copy" data-reveal>
+        <p class="eyebrow">UN POCO SOBRE ESTE ESPACIO</p>
+        <h2>Un refugio para volver a <em>ti.</em></h2>
+        <p>Nayra Elhara crea herramientas de introspección y acompañamiento espiritual desde una voz cercana, sensible y auténtica. Este espacio nace de la convicción de que a veces necesitamos bajar el ruido para volver a escucharnos.</p>
+        <p>No tienes que tener todas las respuestas. Puedes empezar por estar aquí.</p>
+        <a class="text-link" href="Servicios.html">Conocer las formas de acompañamiento <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="closing-section" id="contacto">
+      <span class="closing-star" aria-hidden="true">✳</span>
+      <p class="eyebrow">EL SIGUIENTE PASO PUEDE SER SENCILLO</p>
+      <h2>Empieza donde <em>estás.</em></h2>
+      <p>Explora una reflexión, mira los recursos o conoce las sesiones disponibles.</p>
+      <div class="hero-actions">
+        <a class="button button-light" href="#guia">Elegir una intención <span aria-hidden="true">↗</span></a>
+        <a class="text-link text-link-light" href="Servicios.html">Ver sesiones <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">✳</span><span>Nayra Elhara</span></a>
+    <p>Un espacio para volver a tu centro.</p>
+    <div class="footer-links">
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="#sobre-nayra">Sobre Nayra</a>
+    </div>
+    <div class="site-audio">
+      <div>
+        <p class="eyebrow">MÚSICA PARA ACOMPAÑARTE</p>
+        <p class="site-audio-description">Una atmósfera de bosque de hadas para tu pausa. Pulsa reproducir cuando quieras; el sitio no inicia sonido automáticamente.</p>
+      </div>
+      <audio controls preload="none" aria-label="Música espiritual del bosque de hadas">
+        <source src="hadas-bosque.mp3" type="audio/mpeg">
+        Tu navegador no puede reproducir este archivo de audio.
+      </audio>
+    </div>
+    <small>© <span id="current-year"></span> Nayra Elhara. Todas las reflexiones son orientativas y no sustituyen atención profesional. <a class="site-credit" href="https://arqe-digital.vercel.app/" target="_blank" rel="noopener noreferrer">ARQÉ Digital by Joa ↗</a></small>
+  </footer>
+  <script src="motion.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

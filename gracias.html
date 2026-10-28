@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias | Nayra Elhara</title>
+  <meta name="description" content="Gracias por tu mensaje. Pronto me pondré en contacto contigo." />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navegación (opcional) -->
+  <nav>
+    <div class="logo">Nayra Elhara</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#about">Servicios</a></li>
+      <li><a href="index.html#guia">Guía</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <section class="thank-you" style="padding: 6rem 2rem; text-align:center; margin-top:4rem;">
+    <h2>¡Gracias por tu mensaje!</h2>
+    <p>He recibido tu solicitud y me pondré en contacto contigo lo antes posible.</p>
+    <a href="index.html" class="button">Volver al inicio</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nayra Elhara · Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('ul.nav-links').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
