@@ -50,6 +50,13 @@ Las fotografías de producto anteriores sin procedencia/licencia confirmada se c
 ## Páginas
 
 - `index.html`: portada, guía interactiva por intención y acceso destacado al ebook “Quédate conmigo”.
-- `mapa-astral.html`: formulario inicial para preparar una experiencia de mapa astral. En esta fase solo valida que los datos estén completos; no calcula, envía ni guarda información.
+- `mapa-astral.html`: formulario y resultado inicial del mapa astral. Calcula en el navegador las posiciones y signos de diez cuerpos para nacimientos en Colombia; no envía ni guarda los datos.
+- `mapa-astral.js`: valida el formulario, convierte la hora de Colombia (`America/Bogota`) a UTC y presenta los resultados del motor.
+- `astral/ephemeris-engine.js`: adaptador local que calcula las longitudes eclípticas geocéntricas de Sol, Luna y ocho planetas a partir de una fecha UTC y deriva su signo tropical, grados y minutos.
+- `astral/vendor/astronomy.browser.min.js`: versión 2.1.19 de Astronomy Engine para cálculos deterministas en el navegador; su licencia MIT está en `astral/vendor/ASTRONOMY-ENGINE-LICENSE.txt`.
+- `tests/astral-ephemeris.test.cjs`: comprobaciones automatizadas de determinismo, fecha de entrada, rangos de longitud y límites de signos/grados/minutos.
+- `tests/mapa-astral-form.test.cjs`: verifica que el formulario convierta la hora local de Colombia, calcule y muestre las diez posiciones.
+
+El cálculo visible inicial solo admite nacimientos en Colombia y utiliza la zona horaria IANA `America/Bogota`; todavía no incluye geolocalización ni nacimientos en otros países. El motor seleccionado no calcula casas astrológicas ni ascendente. Casas, aspectos e interpretaciones aún deben implementarse en sus fases correspondientes. El resultado actual incluye longitudes del zodiaco tropical en la eclíptica verdadera de la fecha y día juliano UT según Astronomy Engine; no representa todavía una carta natal completa. Los grados se redondean al minuto de arco más cercano.
 - `Servicios.html`: sesiones, pasos de consulta y solicitud de información.
 - `tienda.html`: tienda de cuarzos, amuletos y ebook; selector simbólico de cuarzo por intención, selección de productos y consulta por WhatsApp. La experiencia interactiva del libro permanece disponible. Precios, disponibilidad y entrega se confirman con Nayra.

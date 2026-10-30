@@ -58,7 +58,7 @@
           <div class="map-field">
             <label for="birth-time">Hora de nacimiento</label>
             <input id="birth-time" name="birthTime" type="time" required>
-            <span class="map-field-hint">Si no la conoces, consulta la partida o registro de nacimiento antes de continuar.</span>
+            <span class="map-field-hint">Si no la conoces, consulta la partida o registro de nacimiento. El cálculo inicial admite nacimientos en Colombia.</span>
           </div>
           <div class="map-field">
             <label for="birth-city">Ciudad de nacimiento</label>
@@ -70,10 +70,18 @@
           </div>
         </div>
 
-        <p class="map-privacy-note">En esta etapa, tus datos no se envían ni se guardan. El formulario solo comprueba que estén completos.</p>
-        <button class="button button-primary map-submit" type="submit">Revisar mis datos <span aria-hidden="true">↗</span></button>
+        <p class="map-privacy-note">El cálculo se realiza en tu navegador. Tus datos no se envían ni se guardan. La hora se interpreta en la zona horaria de Colombia.</p>
+        <button class="button button-primary map-submit" type="submit">Calcular mis posiciones <span aria-hidden="true">↗</span></button>
         <p class="map-form-status" id="map-form-status" role="status" aria-live="polite"></p>
       </form>
+
+      <section class="map-results" id="map-results" aria-labelledby="map-results-title" hidden>
+        <p class="eyebrow">TU CIELO DE NACIMIENTO</p>
+        <h2 id="map-results-title" tabindex="-1">Posiciones <em>planetarias.</em></h2>
+        <p class="map-results-note" id="map-results-note"></p>
+        <ul class="map-position-list" id="map-position-list"></ul>
+        <p class="map-results-limit">Esta primera lectura muestra posiciones y signos zodiacales. Aún no incluye casas, Ascendente, aspectos ni interpretaciones, y no sustituye una carta natal completa.</p>
+      </section>
 
       <p class="map-disclaimer">El mapa astral se presenta como una herramienta simbólica y cultural de reflexión. No constituye diagnóstico médico o psicológico ni ofrece predicciones garantizadas.</p>
     </section>
@@ -93,6 +101,8 @@
   </footer>
   <script src="motion.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="astral/vendor/astronomy.browser.min.js" defer></script>
+  <script src="astral/ephemeris-engine.js" defer></script>
   <script src="mapa-astral.js" defer></script>
 </body>
 </html>
