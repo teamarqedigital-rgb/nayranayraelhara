@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181622">
+  <meta name="description" content="Prepara tus datos de nacimiento para explorar tu mapa astral simbólico en Nayra Elhara.">
+  <title>Conoce tu mapa astral — Nayra Elhara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mapa-astral.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nayra Elhara, inicio">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>Nayra Elhara</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="index.html#guia">Tu momento</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="index.html#sobre-nayra">Sobre Nayra</a>
+      <a class="nav-cta" href="#formulario">Conoce tu mapa <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="map-page">
+    <section class="map-intro" data-reveal>
+      <p class="eyebrow"><span class="eyebrow-line"></span> UNA LECTURA SIMBÓLICA</p>
+      <h1>Conoce tu <em>mapa astral.</em></h1>
+      <p>Una lectura simbólica de tu cielo de nacimiento para explorar diferentes dimensiones de ti.</p>
+      <p class="map-intro-note">Para preparar tu mapa, cuéntanos cuándo y dónde naciste. La hora y la ciudad ayudan a ubicar el cielo de ese momento.</p>
+    </section>
+
+    <section class="map-form-section" id="formulario" aria-labelledby="map-form-title" data-reveal>
+      <div class="map-form-heading">
+        <p class="eyebrow">TUS DATOS DE NACIMIENTO</p>
+        <h2 id="map-form-title">Empecemos <em>por ti.</em></h2>
+        <p>Completa estos datos para continuar con la experiencia.</p>
+      </div>
+
+      <form class="map-form" id="birth-chart-form">
+        <div class="map-form-grid">
+          <div class="map-field map-field-full">
+            <label for="birth-name">Nombre</label>
+            <input id="birth-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+          </div>
+          <div class="map-field">
+            <label for="birth-date">Fecha de nacimiento</label>
+            <input id="birth-date" name="birthDate" type="date" autocomplete="bday" required>
+          </div>
+          <div class="map-field">
+            <label for="birth-time">Hora de nacimiento</label>
+            <input id="birth-time" name="birthTime" type="time" required>
+            <span class="map-field-hint">Si no la conoces, consulta la partida o registro de nacimiento antes de continuar.</span>
+          </div>
+          <div class="map-field">
+            <label for="birth-city">Ciudad de nacimiento</label>
+            <input id="birth-city" name="birthCity" type="text" autocomplete="address-level2" maxlength="100" required>
+          </div>
+          <div class="map-field">
+            <label for="birth-country">País de nacimiento</label>
+            <input id="birth-country" name="birthCountry" type="text" autocomplete="country-name" maxlength="100" required>
+          </div>
+        </div>
+
+        <p class="map-privacy-note">En esta etapa, tus datos no se envían ni se guardan. El formulario solo comprueba que estén completos.</p>
+        <button class="button button-primary map-submit" type="submit">Revisar mis datos <span aria-hidden="true">↗</span></button>
+        <p class="map-form-status" id="map-form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="map-disclaimer">El mapa astral se presenta como una herramienta simbólica y cultural de reflexión. No constituye diagnóstico médico o psicológico ni ofrece predicciones garantizadas.</p>
+    </section>
+
+    <p class="map-back-link"><a class="text-link" href="index.html#guia">← Volver a explorar Nayra</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>Nayra Elhara</span></a>
+    <p>Un espacio para volver a tu centro.</p>
+    <div class="footer-links">
+      <a href="index.html#guia">Oráculo</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html">Tienda</a>
+    </div>
+    <small>El mapa astral es una herramienta simbólica de reflexión; no sustituye atención psicológica, médica ni profesional. <a class="site-credit" href="https://arqe-digital.vercel.app/" target="_blank" rel="noopener noreferrer">ARQÉ Digital by Joa ↗</a></small>
+  </footer>
+  <script src="motion.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="mapa-astral.js" defer></script>
+</body>
+</html>

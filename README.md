@@ -50,5 +50,6 @@ Las fotografías de producto anteriores sin procedencia/licencia confirmada se c
 ## Páginas
 
 - `index.html`: portada, guía interactiva por intención y acceso destacado al ebook “Quédate conmigo”.
+- `mapa-astral.html`: formulario inicial para preparar una experiencia de mapa astral. En esta fase solo valida que los datos estén completos; no calcula, envía ni guarda información.
 - `Servicios.html`: sesiones, pasos de consulta y solicitud de información.
 - `tienda.html`: tienda de cuarzos, amuletos y ebook; selector simbólico de cuarzo por intención, selección de productos y consulta por WhatsApp. La experiencia interactiva del libro permanece disponible. Precios, disponibilidad y entrega se confirman con Nayra.
