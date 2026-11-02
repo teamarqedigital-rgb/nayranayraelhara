@@ -42,6 +42,7 @@
 
   <main>
     <section class="hero" id="inicio">
+      <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
       <div class="hero-copy" data-reveal>
         <p class="eyebrow"><span class="eyebrow-line"></span> UN ESPACIO PARA VOLVER A TU CENTRO</p>
         <h1>Haz espacio para<br><em>escucharte.</em></h1>
@@ -138,6 +139,13 @@
           <p>Una carta simbólica del tarot, con una reflexión para que explores lo que resuena contigo hoy. La misma carta te acompañará durante el día.</p>
           <button class="button button-primary" id="reveal-daily-card" type="button">Conocer mi carta de hoy <span aria-hidden="true">✧</span></button>
           <p class="daily-card-note">Una herramienta de introspección, no una predicción ni una certeza sobre el futuro.</p>
+        </div>
+        <div class="daily-card-preview" aria-hidden="true">
+          <div class="daily-card-preview-card">
+            <span class="daily-card-preview-brand">NAYRA ELHARA</span>
+            <span class="daily-card-preview-symbol">✳</span>
+            <span class="daily-card-preview-caption">UNA CARTA · UNA PAUSA</span>
+          </div>
         </div>
         <article class="daily-reading" id="daily-reading" aria-live="polite" aria-atomic="true" hidden>
           <div class="tarot-card" aria-hidden="true">
@@ -259,6 +267,8 @@
     </div>
     <small>© <span id="current-year"></span> Nayra Elhara. Todas las reflexiones son orientativas y no sustituyen atención profesional. <a class="site-credit" href="https://arqe-digital.vercel.app/" target="_blank" rel="noopener noreferrer">ARQÉ Digital by Joa ↗</a></small>
   </footer>
+  <script src="particles.min.js" defer></script>
+  <script src="home-visual.js" defer></script>
   <script src="motion.js" defer></script>
   <script src="script.js" defer></script>
 </body>

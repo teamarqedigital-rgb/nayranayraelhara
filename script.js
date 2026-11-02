@@ -284,6 +284,7 @@ if (revealDailyCard && dailyReading) {
     document.querySelector("#daily-affirmation").textContent = dailyAffirmations[dateSeed % dailyAffirmations.length];
     document.querySelector("#daily-reading-prompt").textContent = dailyCard.prompt;
     dailyReading.hidden = false;
+    document.querySelector("#carta-del-dia").classList.add("is-revealed");
     revealDailyCard.textContent = "Carta de hoy revelada";
     revealDailyCard.disabled = true;
   };

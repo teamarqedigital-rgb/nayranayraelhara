@@ -686,3 +686,272 @@ h2 em,
     transform: none;
   }
 }
+
+#inicio.hero {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 74% 44%, rgba(177, 138, 97, 0.19), transparent 34%),
+    linear-gradient(118deg, #173D3B 0%, #1B3533 58%, #282927 100%);
+}
+
+#inicio.hero h1 em {
+  color: var(--color-ivory);
+}
+
+#inicio.hero .hero-copy,
+#inicio.hero .hero-art,
+#inicio.hero .scroll-cue {
+  z-index: 2;
+}
+
+#inicio.hero .orbit-two {
+  border-color: rgba(233, 226, 213, 0.3);
+}
+
+.hero-particles {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.hero-particles > .particles-js-canvas-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#servicios .section-heading h2 em {
+  color: var(--color-copper);
+}
+
+#carta-del-dia.daily-card-section {
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 10vw, 148px);
+  background:
+    radial-gradient(ellipse at 78% 24%, rgba(177, 138, 97, 0.13), transparent 36%),
+    var(--color-ivory);
+  color: var(--color-charcoal);
+}
+
+#carta-del-dia .daily-card-inner {
+  position: relative;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 88px);
+  max-width: 1100px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#carta-del-dia .daily-card-intro h2 {
+  color: var(--color-charcoal);
+  font-size: clamp(42px, 5vw, 62px);
+}
+
+#carta-del-dia .daily-card-intro h2 em,
+#carta-del-dia .daily-card-intro .eyebrow,
+#carta-del-dia .daily-reading-copy .eyebrow {
+  color: var(--color-wine);
+}
+
+#carta-del-dia .daily-card-intro > p:not(.eyebrow) {
+  color: #514F49;
+}
+
+#carta-del-dia .daily-card-intro .daily-card-note {
+  color: #69665F !important;
+}
+
+#carta-del-dia .button-primary {
+  border: 0;
+  background: var(--color-wine);
+  color: var(--color-ivory);
+}
+
+#carta-del-dia .daily-card-preview,
+#carta-del-dia .daily-reading {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#carta-del-dia .daily-card-preview {
+  position: relative;
+  display: grid;
+  min-height: 340px;
+  place-items: center;
+  perspective: 900px;
+  isolation: isolate;
+}
+
+#carta-del-dia .daily-card-preview::before,
+#carta-del-dia .daily-card-preview::after {
+  position: absolute;
+  width: min(78%, 330px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(23, 61, 59, 0.16);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+#carta-del-dia .daily-card-preview::after {
+  width: min(96%, 410px);
+  border-color: rgba(177, 138, 97, 0.3);
+}
+
+#carta-del-dia .daily-card-preview-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(61%, 225px);
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 18px;
+  border: 1px solid rgba(177, 138, 97, 0.7);
+  background:
+    radial-gradient(ellipse at 50% 46%, rgba(177, 138, 97, 0.16), transparent 48%),
+    linear-gradient(145deg, #1B4945, var(--color-petrol) 58%, var(--color-charcoal));
+  box-shadow: 14px 20px 34px rgba(40, 41, 39, 0.2), inset 0 0 0 7px rgba(233, 226, 213, 0.035);
+  color: var(--color-ivory);
+  transform: rotate(-3deg);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+#carta-del-dia .daily-card-preview-card::before {
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(177, 138, 97, 0.34);
+  content: "";
+  pointer-events: none;
+}
+
+#carta-del-dia .daily-card-preview-brand,
+#carta-del-dia .daily-card-preview-caption {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+#carta-del-dia .daily-card-preview-brand {
+  color: var(--color-ivory);
+}
+
+#carta-del-dia .daily-card-preview-symbol {
+  color: var(--color-copper);
+  font-family: var(--serif);
+  font-size: 76px;
+  line-height: 1;
+  text-shadow: 0 0 26px rgba(177, 138, 97, 0.4);
+}
+
+#carta-del-dia .daily-card-preview-caption {
+  color: #D3B999;
+  font-size: 7px;
+  text-align: center;
+}
+
+#carta-del-dia .daily-card-preview:hover .daily-card-preview-card {
+  box-shadow: 18px 24px 40px rgba(40, 41, 39, 0.24), inset 0 0 0 7px rgba(233, 226, 213, 0.035);
+  transform: rotate(0) translateY(-4px);
+}
+
+#carta-del-dia.is-revealed .daily-card-preview {
+  display: none;
+}
+
+#carta-del-dia .daily-reading {
+  align-self: center;
+  gap: clamp(20px, 4vw, 36px);
+}
+
+#carta-del-dia .tarot-card {
+  min-height: 300px;
+  border-color: rgba(177, 138, 97, 0.76);
+  outline-color: rgba(177, 138, 97, 0.4);
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(177, 138, 97, 0.22), transparent 55%),
+    linear-gradient(155deg, #1B4945, var(--color-petrol) 70%, var(--color-charcoal));
+}
+
+#carta-del-dia .tarot-card-number,
+#carta-del-dia .tarot-card-date {
+  color: #D3B999;
+}
+
+#carta-del-dia .daily-reading-copy h3 {
+  color: var(--color-charcoal);
+  font-size: clamp(24px, 2.4vw, 30px);
+}
+
+#carta-del-dia .daily-reading-copy > p:not(.eyebrow) {
+  color: #514F49;
+}
+
+#carta-del-dia .daily-reading-copy .daily-angelic-message,
+#carta-del-dia .daily-reading-copy .daily-affirmation {
+  border-color: rgba(177, 138, 97, 0.38);
+  border-left: 2px solid var(--color-copper);
+  background: rgba(177, 138, 97, 0.12);
+  color: var(--color-charcoal);
+}
+
+#carta-del-dia .daily-reading-copy .daily-angelic-message strong,
+#carta-del-dia .daily-reading-copy .daily-affirmation strong {
+  color: var(--color-wine);
+}
+
+#carta-del-dia .daily-reading-copy .daily-question {
+  color: #514F49;
+}
+
+@media (max-width: 850px) {
+  #carta-del-dia .daily-card-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  #carta-del-dia .daily-card-preview,
+  #carta-del-dia .daily-reading {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #carta-del-dia .daily-card-preview {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 600px) {
+  #carta-del-dia.daily-card-section {
+    padding: 68px 22px;
+  }
+
+  #carta-del-dia .daily-card-preview {
+    min-height: 300px;
+  }
+
+  #carta-del-dia .daily-card-preview-card {
+    width: min(64%, 220px);
+    min-height: 280px;
+  }
+
+  #carta-del-dia .daily-reading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #carta-del-dia .tarot-card {
+    width: min(220px, 70%);
+    justify-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #carta-del-dia .daily-card-preview-card {
+    transition: none;
+    transform: none;
+  }
+}
