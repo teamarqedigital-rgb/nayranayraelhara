@@ -1,40 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181622">
   <title>Gracias | Nayra Elhara</title>
-  <meta name="description" content="Gracias por tu mensaje. Pronto me pondré en contacto contigo." />
-  <link rel="icon" href="/favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Gracias por escribir a Nayra Elhara.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navegación (opcional) -->
-  <nav>
-    <div class="logo">Nayra Elhara</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="index.html#about">Servicios</a></li>
-      <li><a href="index.html#guia">Guía</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  </nav>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nayra Elhara, inicio">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>Nayra Elhara</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#guia">Tu momento</a>
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html#cuarzos">Tienda</a>
+      <a href="mapa-astral.html">Conoce tu mapa</a>
+      <a href="index.html#sobre-nayra">Sobre Nayra</a>
+    </nav>
+  </header>
 
-  <section class="thank-you" style="padding: 6rem 2rem; text-align:center; margin-top:4rem;">
-    <h2>¡Gracias por tu mensaje!</h2>
-    <p>He recibido tu solicitud y me pondré en contacto contigo lo antes posible.</p>
-    <a href="index.html" class="button">Volver al inicio</a>
-  </section>
+  <main>
+    <section class="closing-section" aria-labelledby="thanks-title">
+      <span class="closing-star" aria-hidden="true">✳</span>
+      <p class="eyebrow">TU MENSAJE IMPORTA</p>
+      <h1 id="thanks-title">¡Gracias por <em>escribir!</em></h1>
+      <p>He recibido tu solicitud y me pondré en contacto contigo lo antes posible.</p>
+      <a href="index.html" class="button button-primary">Volver al inicio <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; 2025 Nayra Elhara · Todos los derechos reservados</p>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>Nayra Elhara</span></a>
+    <p>Un espacio para volver a tu centro.</p>
+    <div class="footer-links">
+      <a href="index.html#guia">Tu momento</a>
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html#cuarzos">Tienda</a>
+    </div>
+    <small>© <span id="current-year"></span> Nayra Elhara.</small>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.querySelector('ul.nav-links').classList.toggle('open');
-    }
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>

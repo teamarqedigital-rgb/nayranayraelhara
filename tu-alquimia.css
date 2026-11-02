@@ -1,0 +1,750 @@
+.alchemy-page {
+  --alchemy-glow: rgba(116, 87, 130, 0.18);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 32%, rgba(116, 87, 130, 0.08), transparent 42%),
+    var(--night);
+}
+
+.alchemy-hero {
+  position: relative;
+  display: grid;
+  min-height: min(760px, calc(100svh - 76px));
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.86fr);
+  align-items: center;
+  gap: 5vw;
+  padding: 84px clamp(24px, 10vw, 148px) 118px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 74% 48%, var(--alchemy-glow), transparent 37%),
+    linear-gradient(110deg, #1a1824 24%, #211c2b 100%);
+}
+
+.alchemy-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.alchemy-hero h1 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(58px, 8.7vw, 112px);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1;
+}
+
+.alchemy-hero h1 em,
+.alchemy-section h2 em,
+.alchemy-close h2 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.alchemy-hero-subtitle {
+  margin: 0 0 20px;
+  color: var(--lilac);
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.8vw, 32px);
+}
+
+.alchemy-hero-intro {
+  max-width: 550px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.alchemy-hero .button {
+  text-transform: uppercase;
+}
+
+.alchemy-hero-art {
+  position: relative;
+  display: grid;
+  min-height: 430px;
+  place-items: center;
+}
+
+.alchemy-art-halo {
+  position: absolute;
+  width: min(87%, 360px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(215, 189, 142, 0.2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 179, 212, 0.1), transparent 68%);
+  box-shadow: 0 0 80px rgba(116, 87, 130, 0.12);
+}
+
+.alchemy-art-halo::before,
+.alchemy-art-halo::after {
+  position: absolute;
+  inset: 9%;
+  border: 1px solid rgba(200, 179, 212, 0.25);
+  border-radius: 50%;
+  content: "";
+}
+
+.alchemy-art-halo::after {
+  transform: rotate(60deg) scaleX(0.58);
+}
+
+.metatron-art {
+  position: relative;
+  width: min(100%, 410px);
+  overflow: visible;
+  filter: drop-shadow(0 0 15px rgba(200, 179, 212, 0.11));
+}
+
+.metatron-lines {
+  fill: none;
+  stroke: rgba(215, 189, 142, 0.44);
+  stroke-width: 0.8;
+}
+
+.metatron-nodes {
+  fill: #24202f;
+  stroke: var(--lilac);
+  stroke-width: 1.3;
+}
+
+.metatron-nodes circle:last-child {
+  fill: var(--gold);
+  stroke: #f3eee6;
+}
+
+.alchemy-art-caption {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  margin: 0;
+  color: var(--quiet);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.alchemy-art-caption span {
+  color: var(--gold);
+}
+
+.alchemy-scroll-cue {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--quiet);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.alchemy-scroll-cue span {
+  color: var(--gold);
+  font-size: 17px;
+}
+
+.alchemy-section {
+  padding: 104px clamp(24px, 10vw, 148px);
+}
+
+.alchemy-manifesto {
+  display: grid;
+  max-width: 1440px;
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(40px, 9vw, 130px);
+  margin: 0 auto;
+}
+
+.alchemy-section .eyebrow,
+.alchemy-close .eyebrow {
+  color: var(--gold);
+}
+
+.alchemy-section-label {
+  position: sticky;
+  top: 125px;
+  align-self: start;
+}
+
+.alchemy-section h2,
+.alchemy-close h2 {
+  margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.alchemy-section-label > p:last-child,
+.alchemy-heading > p:last-child,
+.ritual-intro > p:not(.eyebrow) {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.manifesto-copy {
+  position: relative;
+  padding: 6px 0 8px 26px;
+  border-left: 1px solid rgba(215, 189, 142, 0.32);
+}
+
+.manifesto-copy > p {
+  margin: 0 0 13px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.2vw, 26px);
+  line-height: 1.55;
+}
+
+.manifesto-copy > p em {
+  color: var(--lilac);
+  font-weight: 400;
+}
+
+.manifesto-copy > .manifesto-promise {
+  max-width: 600px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.manifesto-copy > .manifesto-ending {
+  margin-top: 20px;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+}
+
+.manifesto-signature {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--lilac);
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+}
+
+.alchemy-dimensions {
+  background:
+    radial-gradient(ellipse at 85% 40%, rgba(116, 87, 130, 0.12), transparent 40%),
+    var(--night-soft);
+}
+
+.alchemy-heading {
+  max-width: 680px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.alchemy-heading > p:last-child {
+  margin: 0 auto;
+}
+
+.dimension-grid {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.dimension-card {
+  grid-column: span 2;
+  min-width: 0;
+  padding: 26px 23px 23px;
+  border: 1px solid rgba(235, 220, 199, 0.13);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
+  box-shadow: 0 18px 50px rgba(9, 8, 15, 0.12);
+  transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
+}
+
+.dimension-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.dimension-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.dimension-card:hover {
+  border-color: rgba(200, 179, 212, 0.36);
+  background: linear-gradient(145deg, rgba(200, 179, 212, 0.075), rgba(255, 255, 255, 0.015));
+  transform: translateY(-3px);
+}
+
+.dimension-art {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 24px;
+  place-items: center;
+  border: 1px solid rgba(215, 189, 142, 0.35);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 179, 212, 0.14), transparent 72%);
+}
+
+.dimension-art svg {
+  width: 48px;
+  fill: none;
+  stroke: var(--lilac);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.3;
+}
+
+.dimension-art-care svg {
+  stroke: #c9c4a4;
+}
+
+.dimension-art-power svg,
+.dimension-art-abundance svg {
+  stroke: var(--gold);
+}
+
+.dimension-index {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.dimension-card h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 400;
+}
+
+.dimension-description,
+.dimension-detail p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.dimension-description {
+  min-height: 66px;
+  margin-bottom: 18px;
+}
+
+.dimension-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 0 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(215, 189, 142, 0.5);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+
+.dimension-toggle:hover {
+  color: var(--ink);
+}
+
+.dimension-toggle span,
+.dimension-detail a span {
+  font-size: 15px;
+}
+
+.dimension-detail {
+  margin-top: 19px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+.dimension-detail p {
+  margin-bottom: 14px;
+}
+
+.dimension-detail a {
+  color: var(--lilac);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.dimension-detail a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.alchemy-ritual {
+  display: grid;
+  max-width: 1440px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(36px, 8vw, 112px);
+  margin: 0 auto;
+}
+
+.ritual-intro {
+  position: relative;
+}
+
+.ritual-intro > p:not(.eyebrow) {
+  max-width: 470px;
+}
+
+.ritual-ornament {
+  display: inline-block;
+  margin-top: 12px;
+  color: rgba(200, 179, 212, 0.55);
+  font-size: 54px;
+}
+
+.ritual-form {
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid rgba(215, 189, 142, 0.24);
+  background: linear-gradient(140deg, rgba(38, 34, 48, 0.86), rgba(33, 30, 44, 0.66));
+}
+
+.ritual-form label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
+.ritual-form-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ritual-form select {
+  flex: 1 1 220px;
+  min-width: 0;
+  min-height: 50px;
+  padding: 0 13px;
+  border: 1px solid rgba(235, 220, 199, 0.22);
+  border-radius: 0;
+  background: #211e2c;
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+}
+
+.ritual-form select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.ritual-form .button {
+  flex: 0 1 auto;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 10px;
+}
+
+.ritual-privacy {
+  margin: 14px 0 0;
+  color: var(--quiet);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.ritual-result {
+  grid-column: 2;
+  margin-top: -52px;
+  padding: 25px 30px;
+  border-left: 2px solid var(--lilac);
+  background: rgba(200, 179, 212, 0.055);
+}
+
+.ritual-result .eyebrow {
+  margin-bottom: 8px;
+  font-size: 9px;
+}
+
+.ritual-result h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.ritual-affirmation {
+  color: var(--lilac);
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.ritual-action {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.ritual-action strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.alchemy-declaration {
+  padding-top: 52px;
+}
+
+.declaration-frame {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(34px, 7vw, 76px);
+  border: 1px solid rgba(215, 189, 142, 0.3);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(116, 87, 130, 0.18), transparent 55%),
+    rgba(38, 34, 48, 0.56);
+  text-align: center;
+}
+
+.declaration-frame::before,
+.declaration-frame::after {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-color: var(--gold);
+  border-style: solid;
+  content: "";
+}
+
+.declaration-frame::before {
+  top: 12px;
+  left: 12px;
+  border-width: 1px 0 0 1px;
+}
+
+.declaration-frame::after {
+  right: 12px;
+  bottom: 12px;
+  border-width: 0 1px 1px 0;
+}
+
+.declaration-frame h2 {
+  margin-bottom: 28px;
+  font-size: clamp(33px, 4.5vw, 52px);
+}
+
+.declaration-copy p {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(17px, 2.1vw, 23px);
+  line-height: 1.6;
+}
+
+.declaration-copy p:last-child {
+  max-width: 690px;
+  margin: 18px auto 0;
+  color: var(--lilac);
+}
+
+.declaration-mark {
+  display: inline-block;
+  margin-top: 26px;
+  color: var(--gold);
+  font-size: 20px;
+}
+
+.alchemy-close {
+  padding: 94px 24px 104px;
+  background:
+    radial-gradient(ellipse at 50% 75%, rgba(116, 87, 130, 0.17), transparent 48%),
+    #1b1925;
+  text-align: center;
+}
+
+.alchemy-close h2 {
+  margin: 0 auto 18px;
+  font-size: clamp(38px, 6vw, 72px);
+}
+
+.alchemy-close > p:not(.eyebrow, .alchemy-signature) {
+  max-width: 580px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.alchemy-close .button {
+  text-transform: uppercase;
+}
+
+.alchemy-signature {
+  margin: 44px 0 0;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+@media (max-width: 850px) {
+  .alchemy-hero {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
+    gap: 24px;
+    padding: 74px 7vw 100px;
+  }
+
+  .alchemy-hero-art {
+    min-height: 340px;
+  }
+
+  .alchemy-section {
+    padding: 82px 7vw;
+  }
+
+  .dimension-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dimension-card,
+  .dimension-card:nth-child(4),
+  .dimension-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .dimension-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .dimension-description {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .alchemy-hero {
+    grid-template-columns: 1fr;
+    padding: 62px 24px 82px;
+  }
+
+  .alchemy-hero h1 {
+    font-size: clamp(55px, 16vw, 78px);
+  }
+
+  .alchemy-hero-intro {
+    font-size: 14px;
+  }
+
+  .alchemy-hero-art {
+    min-height: 270px;
+    margin-top: -2px;
+  }
+
+  .metatron-art {
+    width: min(78vw, 320px);
+  }
+
+  .alchemy-art-caption {
+    bottom: -3px;
+  }
+
+  .alchemy-scroll-cue {
+    bottom: 20px;
+  }
+
+  .alchemy-section {
+    padding: 70px 23px;
+  }
+
+  .alchemy-manifesto,
+  .alchemy-ritual {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .alchemy-section-label {
+    position: static;
+  }
+
+  .manifesto-copy {
+    padding-left: 18px;
+  }
+
+  .manifesto-copy > p {
+    font-size: 20px;
+  }
+
+  .dimension-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .dimension-card:last-child {
+    grid-column: auto;
+  }
+
+  .dimension-card {
+    padding: 23px;
+  }
+
+  .dimension-art {
+    margin-bottom: 19px;
+  }
+
+  .dimension-description {
+    margin-bottom: 15px;
+  }
+
+  .ritual-form {
+    padding: 22px 18px;
+  }
+
+  .ritual-form-controls {
+    flex-direction: column;
+  }
+
+  .ritual-form select,
+  .ritual-form .button {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .ritual-result {
+    grid-column: 1;
+    margin-top: -18px;
+    padding: 22px;
+  }
+
+  .alchemy-declaration {
+    padding-top: 20px;
+  }
+
+  .declaration-frame {
+    padding: 34px 22px;
+  }
+
+  .declaration-copy p {
+    font-size: 17px;
+  }
+
+  .alchemy-close {
+    padding: 76px 24px 82px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dimension-card {
+    transition: none;
+  }
+}

@@ -1,0 +1,478 @@
+.tools-page {
+  min-height: 70vh;
+  background:
+    radial-gradient(ellipse at 70% 8%, rgba(116, 87, 130, 0.16), transparent 38%),
+    var(--night);
+}
+
+.tools-hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 95px 24px 72px;
+  text-align: center;
+}
+
+.tools-hero h1 {
+  margin: 0 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.tools-hero h1 em,
+.tools-heading h2 em,
+.tools-boundaries h2 em {
+  color: var(--lilac);
+  font-weight: 400;
+}
+
+.tools-hero > p:not(.eyebrow) {
+  max-width: 690px;
+  margin: 0 auto 15px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.tools-hero .tools-note {
+  max-width: 620px;
+  color: var(--quiet);
+  font-size: 11px;
+}
+
+.tools-library {
+  padding: 70px clamp(24px, 8vw, 110px) 94px;
+  background: rgba(33, 30, 44, 0.62);
+}
+
+.tools-heading {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.tools-heading h2,
+.tools-boundaries h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.tools-grid {
+  display: grid;
+  max-width: 1160px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.tool-card {
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(38, 34, 48, 0.85), rgba(38, 34, 48, 0.45));
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.tool-card:hover {
+  border-color: rgba(200, 179, 212, 0.42);
+  transform: translateY(-3px);
+}
+
+.tool-card-index {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.tool-card-symbol {
+  margin: 22px 0 10px;
+  color: var(--lilac);
+  font-size: 27px;
+}
+
+.tool-card h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.tool-card > p:not(.tool-card-index) {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.tool-card .text-link {
+  margin-top: auto;
+  color: var(--lilac);
+}
+
+.tool-card-next {
+  background: linear-gradient(145deg, rgba(215, 189, 142, 0.065), rgba(38, 34, 48, 0.45));
+}
+
+.tools-workbench {
+  padding: 82px clamp(24px, 8vw, 110px) 96px;
+}
+
+.workbench-grid {
+  display: grid;
+  max-width: 1160px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.workbench-tool {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(38, 34, 48, 0.78), rgba(38, 34, 48, 0.4));
+}
+
+.workbench-tool h3 {
+  margin: 9px 0 16px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.workbench-tool form {
+  display: grid;
+  gap: 10px;
+}
+
+.workbench-tool form label,
+.habit-list legend {
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.workbench-tool input[type="text"],
+.workbench-tool select,
+.workbench-tool textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(235, 220, 199, 0.23);
+  border-radius: 0;
+  background: #191722;
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+}
+
+.workbench-tool textarea {
+  min-height: 112px;
+  resize: vertical;
+  line-height: 1.65;
+}
+
+.workbench-tool input:focus-visible,
+.workbench-tool select:focus-visible,
+.workbench-tool textarea:focus-visible,
+.workbench-tool input[type="range"]:focus-visible,
+.workbench-tool button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.workbench-tool .button {
+  min-height: 44px;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 10px;
+}
+
+.workbench-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.workbench-secondary {
+  min-height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+
+.workbench-secondary:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.workbench-note,
+.workbench-description {
+  margin: 0;
+  color: var(--quiet);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.workbench-status {
+  min-height: 1.4em;
+  margin: 8px 0 0;
+  color: var(--gold);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.wheel-tool {
+  grid-column: 1 / -1;
+}
+
+.wheel-layout {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.62fr) minmax(0, 1.38fr);
+  align-items: center;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.life-wheel-chart {
+  display: block;
+  width: min(100%, 300px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.life-wheel-guides {
+  fill: none;
+  stroke: rgba(235, 220, 199, 0.24);
+  stroke-width: 0.7;
+}
+
+.life-wheel-area {
+  fill: rgba(200, 179, 212, 0.27);
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.wheel-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 20px;
+}
+
+.wheel-controls label {
+  display: grid;
+  grid-template-columns: 1fr 26px;
+  align-items: center;
+  gap: 5px 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.wheel-controls input {
+  width: 100%;
+  grid-column: 1;
+  accent-color: var(--lilac);
+}
+
+.wheel-controls output {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: var(--gold);
+  font-size: 12px;
+  text-align: center;
+}
+
+.wheel-controls .wheel-reset {
+  justify-self: start;
+}
+
+.workbench-tool fieldset {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 15px 0 0;
+  border: 0;
+}
+
+.workbench-tool fieldset legend {
+  margin-bottom: 4px;
+}
+
+.workbench-tool fieldset label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.workbench-tool input[type="checkbox"] {
+  flex: 0 0 auto;
+  margin: 3px 0 0;
+  accent-color: var(--lilac);
+}
+
+.tool-output {
+  margin: 17px 0 0;
+  padding: 16px;
+  border-left: 2px solid var(--lilac);
+  background: rgba(200, 179, 212, 0.055);
+  color: var(--lilac);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.reflection-output h4,
+.goal-output h4 {
+  margin: 0 0 9px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.reflection-output p,
+.goal-output p,
+.goal-output li {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.reflection-output p:last-child,
+.goal-output p:last-child {
+  margin-bottom: 0;
+}
+
+.goal-output ol {
+  margin: 0 0 10px;
+  padding-left: 19px;
+}
+
+.goal-output li + li {
+  margin-top: 4px;
+}
+
+.tools-boundaries {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 94px 24px 104px;
+  text-align: center;
+}
+
+.tools-boundaries > p:not(.eyebrow) {
+  max-width: 700px;
+  margin: 20px auto 24px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.tools-boundaries .text-link {
+  color: var(--gold);
+}
+
+@media (max-width: 850px) {
+  .tools-hero {
+    padding: 74px 7vw 56px;
+  }
+
+  .tools-library {
+    padding: 62px 7vw 76px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tools-workbench {
+    padding: 68px 7vw 78px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tools-hero {
+    padding: 62px 23px 48px;
+  }
+
+  .tools-hero h1 {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+
+  .tools-library {
+    padding: 54px 22px 66px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-workbench {
+    padding: 58px 22px 68px;
+  }
+
+  .workbench-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wheel-tool {
+    grid-column: auto;
+  }
+
+  .wheel-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .life-wheel-chart {
+    width: min(80%, 280px);
+  }
+
+  .wheel-controls {
+    gap: 13px;
+  }
+
+  .workbench-tool {
+    padding: 22px;
+  }
+
+  .tool-card {
+    min-height: 0;
+    padding: 23px;
+  }
+
+  .tool-card-symbol {
+    margin-top: 17px;
+  }
+
+  .tools-boundaries {
+    padding: 68px 23px 76px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card {
+    transition: none;
+  }
+}

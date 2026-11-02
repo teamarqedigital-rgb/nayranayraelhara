@@ -1,126 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarot Interactivo del Amor ✨</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Karla&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Karla', sans-serif;
-      background: linear-gradient(-45deg, #310055, #1e0033, #4e008b, #240031);
-      background-size: 400% 400%;
-      animation: fondo 20s ease infinite;
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    @keyframes fondo {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    h1 {
-      font-family: 'Cinzel', serif;
-      color: #f5e663;
-      font-size: 2.5rem;
-      text-shadow: 0 0 10px #fff;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    input {
-      width: 80%;
-      max-width: 400px;
-      padding: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    button {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 10px;
-      background: #f5e663;
-      color: #1b002d;
-      font-family: 'Cinzel', serif;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      background: #fff;
-    }
-
-    .respuesta {
-      margin-top: 2rem;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: #ffd700;
-    }
-
-    .volver {
-      margin-top: 3rem;
-      display: inline-block;
-      background: #d8b4fe;
-      color: #1b002d;
-      padding: 0.7rem 1.5rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
-      box-shadow: 0 0 10px #d8b4fe;
-    }
-
-    .volver:hover {
-      background: #fff;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181622">
+  <meta name="description" content="Una experiencia de reflexión simbólica sobre vínculos y amor propio. El tarot no predice el futuro ni utiliza inteligencia artificial.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Nayra Elhara">
+  <meta property="og:title" content="Tarot reflexivo — Nayra Elhara">
+  <meta property="og:description" content="Una experiencia de reflexión simbólica sobre vínculos y amor propio, sin predicciones ni inteligencia artificial.">
+  <title>Tarot reflexivo — Nayra Elhara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tarot-interactivo.css">
 </head>
 <body>
-  <h1>🔮 Tarot Interactivo del Amor</h1>
-  <p>Haz una pregunta sobre el amor y recibe una canalización energética con ayuda de la IA.</p>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Nayra Elhara, inicio">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>Nayra Elhara</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#guia">Tu momento</a>
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html" aria-current="page">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html#cuarzos">Tienda</a>
+      <a href="mapa-astral.html">Conoce tu mapa</a>
+      <a href="index.html#sobre-nayra">Sobre Nayra</a>
+    </nav>
+  </header>
 
-  <input type="text" id="preguntaAmor" placeholder="¿Qué deseas saber sobre tu vida amorosa?" />
-  <br />
-  <button onclick="tirarCartas()">Consultar</button>
+  <main class="tarot-page">
+    <nav class="tarot-breadcrumb" aria-label="Migas de pan">
+      <a href="herramientas.html">Herramientas</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Tarot reflexivo</span>
+    </nav>
+    <section class="tarot-experience" aria-labelledby="tarot-title">
+      <div class="tarot-intro" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-line"></span> UNA PAUSA PARA MIRAR HACIA DENTRO</p>
+        <h1 id="tarot-title">Tarot <em>reflexivo.</em></h1>
+        <p>Escribe una pregunta sobre tus vínculos y recibe una reflexión simbólica preescrita para explorar lo que resuena contigo.</p>
+        <p class="tarot-disclaimer">Esta página no utiliza inteligencia artificial, no canaliza mensajes y no predice lo que otra persona siente o lo que ocurrirá. La pregunta no se envía ni se guarda.</p>
+      </div>
+      <form class="tarot-form" id="tarot-form">
+        <label for="preguntaAmor">¿Qué te gustaría explorar sobre tus vínculos?</label>
+        <input type="text" id="preguntaAmor" name="question" maxlength="240" autocomplete="off" placeholder="Escribe una pregunta para ti" required>
+        <button class="button button-primary" type="submit">Recibir una reflexión <span aria-hidden="true">↗</span></button>
+        <article class="tarot-result" id="respuestaAmor" aria-live="polite" aria-atomic="true" hidden>
+          <p class="eyebrow">UNA REFLEXIÓN PARA TI</p>
+          <h2 id="tarot-result-title"></h2>
+          <p id="tarot-result-message"></p>
+          <p class="tarot-result-prompt"><strong>Para observar:</strong> <span id="tarot-result-prompt"></span></p>
+          <button class="tarot-repeat" id="tarot-repeat" type="button">Recibir otra reflexión</button>
+        </article>
+      </form>
+    </section>
+  </main>
 
-  <div class="respuesta" id="respuestaAmor"></div>
-
-  <a href="index.html" class="volver">← Volver al Oráculo</a>
-
-  <script>
-    function tirarCartas() {
-      const pregunta = document.getElementById("preguntaAmor").value.trim();
-      const respuesta = document.getElementById("respuestaAmor");
-
-      if (!pregunta) {
-        respuesta.textContent = "✨ Por favor, formula una pregunta del corazón.";
-        return;
-      }
-
-      const mensajes = [
-        "💖 El amor está cerca, abre tu energía para recibirlo.",
-        "🌹 Esa persona piensa en ti más de lo que imaginas.",
-        "🌕 Sanar tu interior atraerá relaciones verdaderas.",
-        "🦋 Deja ir lo que ya no vibra contigo, algo mejor viene.",
-        "💫 El universo te guía hacia una conexión de almas."
-      ];
-
-      const aleatoria = mensajes[Math.floor(Math.random() * mensajes.length)];
-      respuesta.textContent = aleatoria;
-    }
-  </script>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>Nayra Elhara</span></a>
+    <p>Un espacio para volver a tu centro.</p>
+    <div class="footer-links">
+      <a href="index.html#guia">Tu momento</a>
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
+      <a href="Servicios.html">Sesiones</a>
+      <a href="tienda.html#cuarzos">Tienda</a>
+    </div>
+    <small>Una experiencia simbólica de reflexión; no ofrece predicciones ni sustituye atención profesional.</small>
+  </footer>
+  <script src="motion.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="tarot-interactivo.js" defer></script>
 </body>
 </html>

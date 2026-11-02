@@ -1,0 +1,9 @@
+{
+  "name": "nayra-elhara-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio estático de Nayra Elhara con pruebas locales del mapa astral.",
+  "scripts": {
+    "test": "node tests/natal-chart.test.cjs"
+  }
+}

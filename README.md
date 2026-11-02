@@ -6,6 +6,8 @@ Sitio web estático en español para Nayra Elhara: portada, guía interactiva, s
 
 Abre `index.html` en un navegador o sirve la carpeta con cualquier servidor estático. No hay un proceso de compilación ni dependencias de Node requeridas para el sitio público.
 
+Para validar el motor de carta astral, ejecuta `npm test` (o directamente `node tests/natal-chart.test.cjs`). No hay un proceso de compilación configurado.
+
 ## Configuración comercial
 
 Los enlaces públicos de contacto y agenda se centralizan en `business-config.js`:
@@ -49,14 +51,28 @@ Las fotografías de producto anteriores sin procedencia/licencia confirmada se c
 
 ## Páginas
 
-- `index.html`: portada, guía interactiva por intención y acceso destacado al ebook “Quédate conmigo”.
-- `mapa-astral.html`: formulario y resultado inicial del mapa astral. Calcula en el navegador las posiciones y signos de diez cuerpos para nacimientos en Colombia; no envía ni guarda los datos.
-- `mapa-astral.js`: valida el formulario, convierte la hora de Colombia (`America/Bogota`) a UTC y presenta los resultados del motor.
-- `astral/ephemeris-engine.js`: adaptador local que calcula las longitudes eclípticas geocéntricas de Sol, Luna y ocho planetas a partir de una fecha UTC y deriva su signo tropical, grados y minutos.
-- `astral/vendor/astronomy.browser.min.js`: versión 2.1.19 de Astronomy Engine para cálculos deterministas en el navegador; su licencia MIT está en `astral/vendor/ASTRONOMY-ENGINE-LICENSE.txt`.
-- `tests/astral-ephemeris.test.cjs`: comprobaciones automatizadas de determinismo, fecha de entrada, rangos de longitud y límites de signos/grados/minutos.
-- `tests/mapa-astral-form.test.cjs`: verifica que el formulario convierta la hora local de Colombia, calcule y muestre las diez posiciones.
+- `index.html`: portada con una pausa interactiva de intención, guía por intención y acceso destacado al ebook “Quédate conmigo”.
+- `script.js` y `style.css`: respuesta de la pausa inicial y la guía, carta del día, navegación y estilos globales.
+- `herramientas.html`: índice editorial de experiencias interactivas disponibles; enlaza funciones reales sin crear resultados simulados.
+- `herramientas.js` y `herramientas.css`: diario privado temporal, rueda de autoobservación con reinicio, afirmaciones, registro de hábitos, ejercicio y planificador; funcionan sin backend ni almacenamiento persistente.
+- `tarot-interactivo.html`, `tarot-interactivo.js` y `tarot-interactivo.css`: reflexión simbólica mediante mensajes preescritos, con opción para recibir otra reflexión; no utiliza IA ni afirma predecir el futuro.
+- `mi-libro.html`: ficha editorial de “Quédate conmigo”, con la información disponible, consulta por WhatsApp y opción de compartir.
+- `mi-libro.js`: comparte el enlace mediante el menú nativo o el portapapeles; no almacena datos.
+- La ficha del libro señala que la imagen es ilustrativa, no su portada original. La web no procesa pagos; el contacto para confirmar compra y entrega usa el canal configurado en `business-config.js`.
+- Las vistas previas Open Graph básicas se definen en las páginas principales. Canonical, `og:image`, sitemap y medición de visitas requieren confirmar el dominio de producción y la portada autorizada; no se han inventado.
+- `tu-alquimia.html`: experiencia editorial de transformación personal, con cinco dimensiones y un ritual interactivo que no guarda datos.
+- `tu-alquimia.css` y `tu-alquimia.js`: estilos y contenido interactivo propios de “Tu alquimia”; utiliza el menú y las animaciones compartidos del sitio.
+- `mapa-astral.html` y `mapa-astral.js`: formulario y experiencia completa de carta natal; procesa los datos localmente y no los envía ni los guarda.
+- `mapa-astral.css`: presentación de la rueda y los resultados, integrada con la identidad visual existente.
+- `astral/natal-chart-engine.js`: adaptador para diez cuerpos, signos y grados, Ascendente, Medio Cielo, doce casas Placidus, retrogradación y aspectos mayores.
+- `astral/vendor/circular-natal-horoscope.browser.js`: bundle local fijado de `circular-natal-horoscope-js` 1.1.0, con licencia Unlicense en `astral/vendor/CIRCULAR-NATAL-HOROSCOPE-LICENSE.txt`. El motor utiliza cálculos deterministas basados en la efeméride Moshier/Meeus y no usa IA.
+- `astral/colombia-places.js`: índice local de 1.141 localidades colombianas, derivado del conjunto de GeoNames y limitado a centros poblados de referencia.
+- `astral/interpretations-es.js` y `astral/interpretation-engine.js`: bloques de lectura simbólica editables y reglas para Sol, Luna, Ascendente y aspectos mayores.
+- `tests/natal-chart.test.cjs`: valida determinismo, zona horaria histórica, planetas, ángulos, casas, aspectos, ubicaciones e interpretaciones.
 
-El cálculo visible inicial solo admite nacimientos en Colombia y utiliza la zona horaria IANA `America/Bogota`; todavía no incluye geolocalización ni nacimientos en otros países. El motor seleccionado no calcula casas astrológicas ni ascendente. Casas, aspectos e interpretaciones aún deben implementarse en sus fases correspondientes. El resultado actual incluye longitudes del zodiaco tropical en la eclíptica verdadera de la fecha y día juliano UT según Astronomy Engine; no representa todavía una carta natal completa. Los grados se redondean al minuto de arco más cercano.
+El cálculo admite localidades incluidas en el índice colombiano; no consulta servicios externos. La coordenada corresponde al centro poblado de referencia, no a la dirección exacta del nacimiento, por lo que los ángulos y las casas pueden variar ligeramente. El conjunto de localidades proviene de [GeoNames](https://www.geonames.org/) bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); se distribuye una selección local filtrada para esta experiencia.
+
+La carta muestra el zodiaco tropical, el sistema de casas Placidus, diez cuerpos celestes, Ascendente, Medio Cielo y aspectos mayores de acuerdo con los orbes de la biblioteca. Las interpretaciones son contenido simbólico y cultural, no diagnósticos ni predicciones garantizadas. La hora y la ubicación indicadas pueden afectar el resultado.
+
 - `Servicios.html`: sesiones, pasos de consulta y solicitud de información.
 - `tienda.html`: tienda de cuarzos, amuletos y ebook; selector simbólico de cuarzo por intención, selección de productos y consulta por WhatsApp. La experiencia interactiva del libro permanece disponible. Precios, disponibilidad y entrega se confirman con Nayra.

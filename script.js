@@ -23,6 +23,18 @@ const reflections = {
 
 const reflection = document.querySelector("#reflection");
 const intentionCards = document.querySelectorAll("[data-intention]");
+const heroIntentionChoices = document.querySelectorAll("[data-hero-intention]");
+const heroCheckinResult = document.querySelector("#hero-checkin-result");
+const heroCheckinTitle = document.querySelector("#hero-checkin-result-title");
+const heroCheckinMessage = document.querySelector("#hero-checkin-result-message");
+const heroCheckinPractice = document.querySelector("#hero-checkin-result-practice");
+
+const renderReflection = (target, selectedReflection) => {
+  const { title, message, practice } = target;
+  title.textContent = selectedReflection.title;
+  message.textContent = selectedReflection.message;
+  practice.textContent = selectedReflection.practice;
+};
 
 intentionCards.forEach((card) => {
   card.setAttribute("aria-pressed", "false");
@@ -36,10 +48,33 @@ intentionCards.forEach((card) => {
     intentionCards.forEach((item) => item.setAttribute("aria-pressed", "false"));
     card.setAttribute("aria-pressed", "true");
 
-    document.querySelector("#reflection-title").textContent = selectedReflection.title;
-    document.querySelector("#reflection-message").textContent = selectedReflection.message;
-    document.querySelector("#reflection-practice").textContent = selectedReflection.practice;
+    renderReflection({
+      title: document.querySelector("#reflection-title"),
+      message: document.querySelector("#reflection-message"),
+      practice: document.querySelector("#reflection-practice")
+    }, selectedReflection);
     reflection.hidden = false;
+  });
+});
+
+heroIntentionChoices.forEach((choice) => {
+  choice.addEventListener("click", () => {
+    const selectedReflection = reflections[choice.dataset.heroIntention];
+
+    if (!selectedReflection || !heroCheckinResult) {
+      return;
+    }
+
+    heroIntentionChoices.forEach((item) => {
+      item.setAttribute("aria-pressed", String(item === choice));
+    });
+
+    renderReflection({
+      title: heroCheckinTitle,
+      message: heroCheckinMessage,
+      practice: heroCheckinPractice
+    }, selectedReflection);
+    heroCheckinResult.hidden = false;
   });
 });
 

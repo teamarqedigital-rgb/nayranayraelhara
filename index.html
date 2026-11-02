@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181622">
   <meta name="description" content="Un espacio para volver a tu centro. Explora el oráculo, las sesiones y los recursos de Nayra Elhara.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Nayra Elhara">
+  <meta property="og:title" content="Nayra Elhara — Un espacio para volver a tu centro">
+  <meta property="og:description" content="Un espacio para volver a tu centro. Explora el oráculo, las sesiones y los recursos de Nayra Elhara.">
   <title>Nayra Elhara — Un espacio para volver a tu centro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +26,14 @@
       <span></span><span></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="#inicio" aria-current="page">Inicio</a>
       <a href="#guia">Tu momento</a>
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
       <a href="Servicios.html">Sesiones</a>
-      <a href="tienda.html">Tienda</a>
-      <a href="tienda.html#ebook">El ebook</a>
+      <a href="tienda.html#cuarzos">Tienda</a>
+      <a href="mapa-astral.html">Conoce tu mapa</a>
       <a href="#sobre-nayra">Sobre Nayra</a>
       <a class="nav-cta" href="Servicios.html">Encontrar mi camino <span aria-hidden="true">↗</span></a>
     </nav>
@@ -36,6 +45,21 @@
         <p class="eyebrow"><span class="eyebrow-line"></span> UN ESPACIO PARA VOLVER A TU CENTRO</p>
         <h1>Haz espacio para<br><em>escucharte.</em></h1>
         <p class="hero-intro">Un refugio para la introspección, la espiritualidad y el autoconocimiento. Sin prisa, a tu manera.</p>
+        <div class="hero-checkin" aria-labelledby="hero-checkin-title">
+          <p class="hero-checkin-title" id="hero-checkin-title">¿Qué necesitas hoy?</p>
+          <div class="hero-checkin-options" role="group" aria-label="Elige cómo te sientes hoy">
+            <button type="button" class="hero-checkin-choice" data-hero-intention="amor" aria-pressed="false">Volver a mí</button>
+            <button type="button" class="hero-checkin-choice" data-hero-intention="claridad" aria-pressed="false">Ver con claridad</button>
+            <button type="button" class="hero-checkin-choice" data-hero-intention="proposito" aria-pressed="false">Encontrar un paso</button>
+            <button type="button" class="hero-checkin-choice" data-hero-intention="calma" aria-pressed="false">Hacer una pausa</button>
+          </div>
+          <article class="hero-checkin-result" id="hero-checkin-result" aria-live="polite" aria-atomic="true" hidden>
+            <h2 id="hero-checkin-result-title"></h2>
+            <p id="hero-checkin-result-message"></p>
+            <p class="hero-checkin-practice"><strong>Prueba esto:</strong> <span id="hero-checkin-result-practice"></span></p>
+            <a href="#guia">Explorar más reflexiones <span aria-hidden="true">↓</span></a>
+          </article>
+        </div>
         <div class="hero-actions">
           <a class="button button-primary" href="#carta-del-dia" data-reveal-daily-card>Conoce aquí tu carta de hoy <span aria-hidden="true">↗</span></a>
           <a class="text-link" href="Servicios.html">Conocer las sesiones <span aria-hidden="true">→</span></a>
@@ -177,7 +201,7 @@
           <h3 id="ebook-promo-title">Quédate<br><em>conmigo.</em></h3>
           <p>Un ensayo íntimo y pausas prácticas para no desaparecer cuando amas. Conoce el libro y prueba una experiencia breve inspirada en sus temas.</p>
           <div class="ebook-promo-actions">
-            <a class="button button-primary" href="tienda.html#ebook">Conocer el ebook <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="mi-libro.html">Conocer el ebook <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="tienda.html#pausa-libro">Probar una pausa interactiva <span aria-hidden="true">→</span></a>
           </div>
         </div>
@@ -214,6 +238,10 @@
     <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">✳</span><span>Nayra Elhara</span></a>
     <p>Un espacio para volver a tu centro.</p>
     <div class="footer-links">
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
+      <a href="mapa-astral.html">Conoce tu mapa</a>
       <a href="Servicios.html">Sesiones</a>
       <a href="tienda.html">Tienda</a>
       <a href="#sobre-nayra">Sobre Nayra</a>

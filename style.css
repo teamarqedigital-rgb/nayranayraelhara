@@ -79,7 +79,7 @@ button:focus-visible {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(18px, 3vw, 38px);
+  gap: clamp(10px, 1.45vw, 20px);
 }
 
 .site-nav a,
@@ -94,6 +94,18 @@ button:focus-visible {
 .site-nav a:hover,
 .footer-links a:hover {
   color: var(--ink);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--gold);
+}
+
+.site-nav a[aria-current="page"]:not(.nav-cta)::after {
+  display: block;
+  height: 1px;
+  margin-top: 3px;
+  background: currentColor;
+  content: "";
 }
 
 .site-nav .nav-cta {
@@ -175,6 +187,90 @@ h2 em {
   color: #c9c1c3;
   font-size: 15px;
   line-height: 1.85;
+}
+
+.hero-checkin {
+  max-width: 490px;
+  margin: 0 0 24px;
+}
+
+.hero-checkin-title {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+}
+
+.hero-checkin-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-checkin-choice {
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid rgba(200, 179, 212, 0.3);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.hero-checkin-choice:hover,
+.hero-checkin-choice[aria-pressed="true"] {
+  border-color: var(--gold);
+  background: rgba(215, 189, 142, 0.09);
+  color: var(--gold);
+}
+
+.hero-checkin-result {
+  margin-top: 12px;
+  padding: 15px 17px;
+  border-left: 2px solid var(--lilac);
+  background: rgba(200, 179, 212, 0.055);
+  animation: reveal 240ms ease both;
+}
+
+.hero-checkin-result[hidden] {
+  display: none;
+}
+
+.hero-checkin-result h2 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.hero-checkin-result p {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.hero-checkin-result .hero-checkin-practice {
+  color: var(--lilac);
+}
+
+.hero-checkin-practice strong {
+  color: var(--gold);
+}
+
+.hero-checkin-result a {
+  color: var(--gold);
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.hero-checkin-result a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .hero-actions {
@@ -1308,6 +1404,19 @@ h2 em {
   .hero-intro {
     max-width: 360px;
     font-size: 14px;
+  }
+
+  .hero-checkin {
+    margin-bottom: 21px;
+  }
+
+  .hero-checkin-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-checkin-choice {
+    padding-inline: 8px;
   }
 
   .hero-art {
@@ -3116,5 +3225,67 @@ h2 em {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (min-width: 851px) and (max-width: 1240px) {
+  .site-header {
+    min-height: 68px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid var(--line);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 17px;
+    height: 1px;
+    background: var(--ink);
+    transition: transform 180ms ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 24px 20px;
+    border-bottom: 1px solid var(--line);
+    background: #1b1924;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 12px 3px;
+  }
+
+  .site-nav .nav-cta {
+    margin-top: 8px;
+    padding: 11px 13px;
+    text-align: center;
   }
 }

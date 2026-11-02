@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#181622">
+  <meta name="theme-color" content="#152b2a">
   <meta name="description" content="Prepara tus datos de nacimiento para explorar tu mapa astral simbólico en Nayra Elhara.">
   <title>Conoce tu mapa astral — Nayra Elhara</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,16 @@
       <span></span><span></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
       <a href="index.html#guia">Tu momento</a>
+      <a href="tu-alquimia.html">Tu alquimia</a>
+      <a href="herramientas.html">Herramientas</a>
+      <a href="mi-libro.html">Mi libro</a>
       <a href="Servicios.html">Sesiones</a>
-      <a href="tienda.html">Tienda</a>
+      <a href="tienda.html#cuarzos">Tienda</a>
+      <a href="mapa-astral.html" aria-current="page">Conoce tu mapa</a>
       <a href="index.html#sobre-nayra">Sobre Nayra</a>
-      <a class="nav-cta" href="#formulario">Conoce tu mapa <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="#formulario">Crear mi carta <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
@@ -54,15 +59,18 @@
           <div class="map-field">
             <label for="birth-date">Fecha de nacimiento</label>
             <input id="birth-date" name="birthDate" type="date" autocomplete="bday" required>
+            <span class="map-field-hint">Disponible para fechas desde 1900.</span>
           </div>
           <div class="map-field">
             <label for="birth-time">Hora de nacimiento</label>
             <input id="birth-time" name="birthTime" type="time" required>
-            <span class="map-field-hint">Si no la conoces, consulta la partida o registro de nacimiento. El cálculo inicial admite nacimientos en Colombia.</span>
+            <span class="map-field-hint">Si no la conoces, consulta la partida o registro de nacimiento. El cálculo admite nacimientos en Colombia.</span>
           </div>
           <div class="map-field">
             <label for="birth-city">Ciudad de nacimiento</label>
-            <input id="birth-city" name="birthCity" type="text" autocomplete="address-level2" maxlength="100" required>
+            <input id="birth-city" name="birthCity" type="text" list="colombia-places" autocomplete="off" maxlength="140" required>
+            <datalist id="colombia-places"></datalist>
+            <span class="map-field-hint">Escribe y elige una localidad de las sugerencias para usar sus coordenadas aproximadas.</span>
           </div>
           <div class="map-field">
             <label for="birth-country">País de nacimiento</label>
@@ -70,17 +78,58 @@
           </div>
         </div>
 
-        <p class="map-privacy-note">El cálculo se realiza en tu navegador. Tus datos no se envían ni se guardan. La hora se interpreta en la zona horaria de Colombia.</p>
-        <button class="button button-primary map-submit" type="submit">Calcular mis posiciones <span aria-hidden="true">↗</span></button>
+        <p class="map-privacy-note">El cálculo se realiza en tu navegador y tus datos no se envían ni se guardan. La localidad seleccionada aproxima el lugar de nacimiento; la hora histórica se convierte con la zona horaria correspondiente.</p>
+        <p class="map-data-credit">Las coordenadas aproximadas de localidades se basan en <a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a>, bajo licencia <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.</p>
+        <button class="button button-primary map-submit" type="submit">Crear mi carta astral <span aria-hidden="true">↗</span></button>
         <p class="map-form-status" id="map-form-status" role="status" aria-live="polite"></p>
       </form>
 
       <section class="map-results" id="map-results" aria-labelledby="map-results-title" hidden>
         <p class="eyebrow">TU CIELO DE NACIMIENTO</p>
-        <h2 id="map-results-title" tabindex="-1">Posiciones <em>planetarias.</em></h2>
+        <h2 id="map-results-title" tabindex="-1">Tu carta <em>astral.</em></h2>
+        <p class="map-personal-greeting" id="map-personal-greeting"></p>
         <p class="map-results-note" id="map-results-note"></p>
-        <ul class="map-position-list" id="map-position-list"></ul>
-        <p class="map-results-limit">Esta primera lectura muestra posiciones y signos zodiacales. Aún no incluye casas, Ascendente, aspectos ni interpretaciones, y no sustituye una carta natal completa.</p>
+        <div class="map-main-keys" id="map-main-keys"></div>
+        <p class="map-location-accuracy">La ciudad representa el centro poblado de referencia, no la dirección exacta del nacimiento. Esto puede modificar ligeramente los ángulos y las casas.</p>
+
+        <div class="map-chart-layout">
+          <div class="map-chart-wheel-wrap">
+            <svg class="map-chart-wheel" id="map-chart-wheel" viewBox="0 0 720 720" role="img" aria-labelledby="map-chart-wheel-title map-chart-wheel-description">
+              <title id="map-chart-wheel-title">Rueda de la carta astral</title>
+              <desc id="map-chart-wheel-description">Representación zodiacal de las posiciones planetarias, los ángulos y las doce casas.</desc>
+            </svg>
+            <p class="map-chart-wheel-caption">Zodiaco tropical · casas Placidus</p>
+          </div>
+          <div class="map-chart-summary">
+            <h3>Ángulos principales</h3>
+            <dl class="map-angle-list" id="map-angle-list"></dl>
+            <h3>Planetas y casas</h3>
+            <ul class="map-position-list" id="map-position-list"></ul>
+          </div>
+        </div>
+
+        <details class="map-detail-panel">
+          <summary>Explorar las doce casas</summary>
+          <ol class="map-house-list" id="map-house-list"></ol>
+        </details>
+
+        <details class="map-detail-panel">
+          <summary>Ver aspectos principales <span id="map-aspect-count"></span></summary>
+          <ul class="map-aspect-list" id="map-aspect-list"></ul>
+        </details>
+
+        <section class="map-interpretations" aria-labelledby="map-interpretations-title">
+          <p class="eyebrow">UNA LECTURA SIMBÓLICA</p>
+          <h3 id="map-interpretations-title">Pistas para <em>reflexionar.</em></h3>
+          <p class="map-interpretation-intro">La astrología ofrece un lenguaje simbólico y cultural, no conclusiones científicas sobre tu personalidad o tu futuro.</p>
+          <div class="map-interpretation-grid" id="map-interpretation-grid"></div>
+          <details class="map-detail-panel">
+            <summary>Lectura simbólica de los aspectos <span id="map-aspect-interpretation-count"></span></summary>
+            <ul class="map-aspect-list map-aspect-interpretation-list" id="map-aspect-interpretation-list"></ul>
+          </details>
+        </section>
+
+        <p class="map-results-limit">El mapa es una herramienta de exploración personal y no sustituye atención médica, psicológica ni profesional. Las posiciones dependen de la precisión de la hora y del lugar indicados.</p>
       </section>
 
       <p class="map-disclaimer">El mapa astral se presenta como una herramienta simbólica y cultural de reflexión. No constituye diagnóstico médico o psicológico ni ofrece predicciones garantizadas.</p>
@@ -101,8 +150,15 @@
   </footer>
   <script src="motion.js" defer></script>
   <script src="script.js" defer></script>
-  <script src="astral/vendor/astronomy.browser.min.js" defer></script>
-  <script src="astral/ephemeris-engine.js" defer></script>
+  <script src="astral/natal-chart-bootstrap.js" defer></script>
+  <script src="astral/vendor/circular-natal-horoscope.browser.js" defer></script>
+  <script src="astral/natal-chart-ready.js" defer></script>
+  <script src="astral/colombia-places.js" defer></script>
+  <script src="astral/colombia-location.js" defer></script>
+  <script src="astral/natal-chart-engine.js" defer></script>
+  <script src="astral/interpretations-es.js" defer></script>
+  <script src="astral/interpretation-engine.js" defer></script>
+  <script src="astral/natal-chart-ui.js" defer></script>
   <script src="mapa-astral.js" defer></script>
 </body>
 </html>
