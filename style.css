@@ -350,6 +350,15 @@ h2 em {
   content: "";
 }
 
+.hero-art::after {
+  position: absolute;
+  inset: 8% 12% 11%;
+  border-radius: 48% 48% 2px 2px;
+  box-shadow: 0 0 28px 8px rgba(215, 189, 142, 0.48), 0 0 64px 18px rgba(215, 189, 142, 0.3);
+  content: "";
+  pointer-events: none;
+}
+
 .hero-art img {
   position: absolute;
   inset: 8% 12% 11%;
@@ -359,6 +368,7 @@ h2 em {
   object-fit: cover;
   object-position: center 26%;
   opacity: 0.93;
+  filter: drop-shadow(0 0 16px rgba(215, 189, 142, 0.48)) drop-shadow(0 0 38px rgba(215, 189, 142, 0.26));
   mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
 }
 

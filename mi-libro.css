@@ -131,7 +131,9 @@
 }
 
 .book-art .ebook-cover {
-  width: min(72%, 275px);
+  width: min(90%, 290px);
+  min-height: 0;
+  aspect-ratio: 0.78;
 }
 
 .book-art-caption {
