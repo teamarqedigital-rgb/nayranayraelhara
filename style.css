@@ -1025,8 +1025,8 @@ h2 em {
 .ebook-promo-cover {
   justify-self: center;
   width: 185px;
-  min-height: 250px;
-  padding: 18px 15px;
+  min-height: 0;
+  aspect-ratio: 294 / 523;
   animation: none;
 }
 
@@ -2742,23 +2742,25 @@ h2 em {
 .ebook-cover {
   position: relative;
   z-index: 1;
-  display: flex;
+  display: block;
   width: min(72%, 275px);
-  min-height: 370px;
-  flex-direction: column;
-  align-items: center;
-  padding: 25px 22px;
+  min-height: 0;
+  aspect-ratio: 294 / 523;
+  padding: 0;
   border: 1px solid rgba(236, 218, 183, 0.55);
-  background:
-    linear-gradient(180deg, rgba(28, 24, 39, 0.24), rgba(28, 24, 39, 0.7)),
-    url("nayra.png") center 28% / cover,
-    #4a3b58;
+  background: transparent;
   box-shadow: 16px 21px 38px rgba(0, 0, 0, 0.32), inset 5px 0 rgba(247, 232, 198, 0.1);
-  text-align: center;
   transform: rotateY(-12deg) rotateZ(-3deg);
   transform-style: preserve-3d;
   animation: ebook-float 5s ease-in-out infinite;
   transition: transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 450ms ease;
+}
+
+.ebook-cover-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .ebook-cover::before {
@@ -3151,7 +3153,8 @@ h2 em {
 
   .ebook-cover {
     width: min(85%, 245px);
-    min-height: 340px;
+    min-height: 0;
+    aspect-ratio: 294 / 523;
   }
 }
 
@@ -3177,7 +3180,8 @@ h2 em {
 
   .ebook-cover {
     width: min(68%, 250px);
-    min-height: 335px;
+    min-height: 0;
+    aspect-ratio: 294 / 523;
   }
 
   .ebook-intro,
